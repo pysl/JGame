@@ -14,10 +14,11 @@ import javax.swing.JOptionPane;
 
 public class Canvas
 {
-    //size of the window
-    //public static int windowSizeX = 840;
-    //public static int windowSizeY = 840;
+    public static int red = 255;
+    public static int green = 255;
+    public static int blue = 0;
 
+    public static String title = "JGame Window";
     private static Canvas canvas = new Canvas();
 
     private ArrayList<Shape> shapes = new ArrayList<Shape>();
@@ -29,12 +30,19 @@ public class Canvas
     private static final int MARGIN = 10;
     private static final int LOCATION_OFFSET = 120;
 
-    public static void setCanvasSize(int x, int y) {
+    public static void setSize(int x, int y) {
         frame.setSize(x,y);
     }
+
+    /*
+    does not work. dont try it.
     public static void setCanvasColor(Color color) {
-        frame.getContentPane().setBackground(new java.awt.Color((int) color.getRed(), (int) color.getGreen(), (int) color.getBlue()));
+        red = (int) color.getRed();
+        green = (int) color.getGreen();
+        blue = (int) color.getBlue();
+
     }
+    */
 
     class CanvasComponent extends JComponent
     {
@@ -78,14 +86,17 @@ public class Canvas
         component = new CanvasComponent();
 
         //making the window
-        frame = new JFrame();
+        frame = new JFrame(title);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(component);
         frame.pack();
         frame.setLocation(LOCATION_OFFSET, LOCATION_OFFSET);
+        frame.getContentPane().setBackground(new java.awt.Color(red,green,blue));
+
 
         frame.setVisible(true);
+
 
     }
 

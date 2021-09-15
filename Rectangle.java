@@ -1,4 +1,3 @@
-//HIDE
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 
@@ -11,9 +10,8 @@ public class Rectangle implements Shape
     private double width;
     private double height;
 
-    /**
-       Constructs an empty rectangle.
-    */
+
+    //makes an empty rectangle.
     public Rectangle()
     {
         x = 0;
@@ -24,10 +22,10 @@ public class Rectangle implements Shape
 
     /**
        Constructs a rectangle.
-        x the leftmost x-coordinate
-        y the topmost y-coordinate
-        width the width
-        height the height
+       x is the leftmost x-coordinate
+       y is the topmost y-coordinate
+       width the width
+       height the height
     */
     public Rectangle(double x, double y, double width, double height)
     {
@@ -75,8 +73,8 @@ public class Rectangle implements Shape
 
     /**
        Moves this rectangle by a given amount.
-        dx the amount by which to move in x-direction
-        dy the amount by which to move in y-direction
+       dx is the amount by which to move in x-direction
+       dy is the amount by which to move in y-direction
     */
     public void translate(double dx, double dy)
     {
@@ -87,8 +85,8 @@ public class Rectangle implements Shape
 
     /**
        Resizes this rectangle both horizontally and vertically.
-        dw the amount by which to resize the width on each side
-        dw the amount by which to resize the height on each side
+       dw is the amount by which to resize the width on each side
+       dw is the amount by which to resize the height on each side
     */
     public void grow(double dw, double dh)
     {
@@ -101,7 +99,7 @@ public class Rectangle implements Shape
 
     /**
        Sets the color of this rectangle.
-        newColor the new color
+       newColor is the new color. duh
     */
     public void setColor(Color newColor)
     {
@@ -109,18 +107,14 @@ public class Rectangle implements Shape
         Canvas.getInstance().repaint();
     }
 
-    /**
-       Draws this rectangle.
-    */
+    //draws outline of rectangle
     public void draw()
     {
         filled = false;
         Canvas.getInstance().show(this);
     }
 
-    /**
-       Fills this rectangle.
-    */
+    //draws filled in rectangle
     public void fill()
     {
         filled = true;

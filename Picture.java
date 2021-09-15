@@ -1,4 +1,3 @@
-//HIDE
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -34,8 +33,8 @@ public class Picture implements Shape
 
    /**
     * Constructs a picture with a given width and height.
-    *  width the desired width
-    *  height the desired height
+    * width is the desired width
+    * height is the desired height
     */
    public Picture(double width, double height)
    {
@@ -45,10 +44,9 @@ public class Picture implements Shape
       label.setText("");
    }
 
-    /**
-     * Constructs an image from a given file or URL.
-     *  source the filename or URL
-     */
+
+    //loads picture
+
     public Picture(String source)
     {
         load(source);
@@ -72,11 +70,11 @@ public class Picture implements Shape
             label.setIcon(new ImageIcon(image));
             label.setText("");
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
             image = null;
             label.setIcon(null);
-            ex.printStackTrace();
+            e.printStackTrace();
         }
         Canvas.getInstance().repaint();
     }
@@ -199,9 +197,11 @@ public class Picture implements Shape
 
     /**
      * Gets the color of a pixel.
-     * x: the x-coordinate (column) of the pixel
-     * y: the y-coordinate (row) of the pixel
-     * color: the new color for the pixel
+     * x is the x-coordinate (column) of the pixel
+     * y is the y-coordinate (row) of the pixel
+     * color is the new color for the pixel
+     *
+     * im getting tired of writing these
      */
     public Color getColorAt(int x, int y)
     {
@@ -218,8 +218,8 @@ public class Picture implements Shape
 
     /**
      * Sets the color of a pixel.
-     * x: the x-coordinate (column) of the pixel
-     * y: the y-coordinate (row) of the pixel
+     * x is the x-coordinate (column) of the pixel
+     * y is the y-coordinate (row) of the pixel
      * the color of the pixel at the given row and column
      */
     public void setColorAt(int x, int y, Color color)
@@ -237,8 +237,8 @@ public class Picture implements Shape
 
     /**
      * Moves this picture by a given amount.
-     * dx: the amount by which to move in x-direction
-     * dy: the amount by which to move in y-direction
+     * dx is the amount by which to move in x-direction
+     * dy is the amount by which to move in y-direction
      */
     public void translate(double dx, double dy)
     {
@@ -249,8 +249,8 @@ public class Picture implements Shape
 
     /**
      * Resizes this picture both horizontally and vertically.
-     *  dw the amount by which to resize the width on each side
-     *  dw the amount by which to resize the height on each side
+     * dw is the amount by which to resize the width on each side
+     * dw is the amount by which to resize the height on each side
      */
     public void grow(double dw, double dh)
     {
@@ -269,7 +269,7 @@ public class Picture implements Shape
 
     /**
      * Draws this shape.
-     *  g2 the graphics context
+     * g2 is the graphics context
      */
     public void paintShape(Graphics2D g2)
     {

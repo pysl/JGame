@@ -1,4 +1,3 @@
-//HIDE
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
@@ -11,13 +10,7 @@ public class Ellipse implements Shape
     private double width;
     private double height;
 
-    /**
-     * Constructs an ellipse.
-     *  x the leftmost x-coordinate
-     *  y the topmost y-coordinate
-     *  width the width of the bounding box
-     *  height the height of the bounding box
-     */
+    //sets ellipse x,y,width, and height. this is what you call from other scripts
     public Ellipse(double x, double y, double width, double height)
     {
         this.x = x;
@@ -26,48 +19,32 @@ public class Ellipse implements Shape
         this.height = height;
     }
 
-    /**
-     * Gets the leftmost x-position of this ellipse.
-     * returns the leftmost x-position
-     */
+    //returns value
     public int getX()
     {
         return (int) Math.round(x);
     }
 
-    /**
-     * Gets the topmost y-position of this ellipse.
-     * returns the topmost y-position
-     */
+
     public int getY()
     {
         return (int) Math.round(y);
     }
 
 
-    /**
-     * Gets the width of the bounding box.
-     * returns the width
-     */
     public int getWidth()
     {
         return (int) Math.round(width);
     }
 
-    /**
-     * Gets the height of the bounding box.
-     * returns the height
-     */
+
     public int getHeight()
     {
         return (int) Math.round(height);
     }
 
-    /**
-     * Moves this ellipse by a given amount.
-     *  dx the amount by which to move in x-direction
-     *  dy the amount by which to move in y-direction
-     */
+
+    //move ellipse over by dx and dy
     public void translate(double dx, double dy)
     {
         x += dx;
@@ -75,11 +52,7 @@ public class Ellipse implements Shape
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Resizes this ellipse both horizontally and vertically.
-     *  dw the amount by which to resize the width on each side
-     *  dw the amount by which to resize the height on each side
-     */
+    //resizes ellipse by dw and dh
     public void grow(double dw, double dh)
     {
         width += 2 * dw;
@@ -89,34 +62,28 @@ public class Ellipse implements Shape
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Sets the color of this ellipse.
-     *  newColor the new color
-     */
+    //sets color
     public void setColor(Color newColor)
     {
         color = newColor;
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Draws this ellipse.
-     */
+    //draws shape outline without filling it
     public void draw()
     {
         filled = false;
         Canvas.getInstance().show(this);
     }
 
-    /**
-     * Fills this ellipse.
-     */
+    //draws shape filled in
     public void fill()
     {
         filled = true;
         Canvas.getInstance().show(this);
     }
 
+    //turns ellipse obj into a string of values
     public String toString()
     {
         return "Ellipse[x=" + getX() + ",y=" + getY() + ",width=" + getWidth() + ",height=" + getHeight() + "]";

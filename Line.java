@@ -9,8 +9,8 @@ public class Line implements Shape
     private double x2;
     private double y2;
 
-    /**
-     * Constructs a line with a given starting and ending location.
+    /*
+     * defines a line
      * x1 the x-coordinate of the starting point
      * y1 the y-coordinate of the starting point
      * x2 the x-coordinate of the ending point
@@ -24,47 +24,30 @@ public class Line implements Shape
         this.y2 = y2;
     }
 
-    /**
-     * Gets the leftmost x-position of the line.
-     * returns the leftmost x-position
-     */
+    //returns values
     public int getX()
     {
         return (int) Math.round(Math.min(x1, x2));
     }
 
-    /**
-     * Gets the topmost y-position of the line.
-     * returns the topmost y-position
-     */
     public int getY()
     {
         return (int) Math.round(Math.min(y1, y2));
     }
 
-    /**
-     * Gets the width of the bounding box.
-     * returns the width
-     */
     public int getWidth()
     {
         return (int) Math.round(Math.abs(x2 - x1));
     }
 
-    /**
-     * Gets the height of the bounding box.
-     * returns the height
-     */
     public int getHeight()
     {
         return (int) Math.round(Math.abs(y2 - y1));
     }
 
-    /**
-     * Moves this line by a given amount.
-     * dx the amount by which to move in x-direction
-     * dy the amount by which to move in y-direction
-     */
+
+
+    //moves the line by given amount
     public void translate(double dx, double dy)
     {
         x1 += dx;
@@ -76,8 +59,8 @@ public class Line implements Shape
 
     /**
      * Resizes this line both horizontally and vertically.
-     * dw the amount by which to resize the width on each side
-     * dw the amount by which to resize the height on each side
+     * dw is the amount by which to resize the width
+     * dw is the amount by which to resize the height
      */
     public void grow(double dw, double dh)
     {
@@ -105,19 +88,13 @@ public class Line implements Shape
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Sets the color for drawing this line.
-     * newColor the new color
-     */
     public void setColor(Color newColor)
     {
         color = newColor;
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Shows this line on the canvas.
-     */
+    //draws the line of the screen
     public void draw()
     {
         Canvas.getInstance().show(this);

@@ -1,25 +1,17 @@
-import java.util.*;
 public class example {
 	public static void main(String[] args) {
-		Canvas.setCanvasColor(new Color(0,0,0));
-		Canvas.setCanvasSize(800,800);
-		Rectangle rect = new Rectangle(0,0,100,100);
+
+		Canvas.setSize(350,275);
+
+
+		Rectangle rect = new Rectangle(10,10,100,100);
+		rect.setColor(new Color(0,255,0));
 		rect.fill();
 
-	}
-	public static void waitFor(int time) {
-		try
-		{
-			Thread.sleep(time);
-		}
-		catch(InterruptedException e) {
-			Thread.currentThread().interrupt();
-		}
-	}
+		Text text = new Text(100,150, "This is example text");
+		text.draw();
 
-	public static int randInt(int min, int max) {
-    Random r = new Random();
-    int randomNum = r.nextInt((max - min) + 1) + min;
-    return randomNum;
+		Ellipse ellipse = new Ellipse(200,10,100,100);
+		ellipse.draw();
 	}
 }

@@ -15,9 +15,9 @@ public class Text implements Shape
 
     /**
      * Constructs a text at a given location.
-     *  x the leftmost x-position of the shape
-     *  y the topmost y-position of the shape
-     *  message the text string
+     * x is the leftmost x-position of the shape
+     * y is the topmost y-position of the shape
+     * message the text string
      */
     public Text(double x, double y, String message)
     {
@@ -27,38 +27,24 @@ public class Text implements Shape
     }
 
 
-    /**
-     * Gets the leftmost x-position of the bounding box.
-     * returns the leftmost x-position
-     */
+
     public int getX()
     {
         return (int) Math.round(x - xGrow) ;
     }
 
-    /**
-     * Gets the topmost y-position of the bounding box.
-     * returns the topmost y-position
-     */
     public int getY()
     {
         return (int) Math.round(y - yGrow);
     }
 
 
-    /**
-     * Gets the width of the bounding box.
-     * returns the width
-     */
+
     public int getWidth()
     {
         return (int) Math.round(label.getPreferredSize().getWidth() + 2 * xGrow);
     }
 
-    /**
-     * Gets the height of the bounding box.
-     * returns the height
-     */
     public int getHeight()
     {
         return (int) Math.round(label.getPreferredSize().getHeight() + 2 * yGrow);
@@ -66,8 +52,8 @@ public class Text implements Shape
 
     /**
      * Moves this text by a given amount.
-     *  dx the amount by which to move in x-direction
-     *  dy the amount by which to move in y-direction
+     * dx is the amount by which to move in x-direction
+     * dy is the amount by which to move in y-direction
      */
     public void translate(double dx, double dy)
     {
@@ -78,8 +64,8 @@ public class Text implements Shape
 
     /**
      * Resizes this text both horizontally and vertically.
-     *  dw the amount by which to resize the width on each side
-     *  dw the amount by which to resize the height on each side
+     * dw is the amount by which to resize the width on each side
+     * dh is the amount by which to resize the height on each side
      */
     public void grow(double dw, double dh)
     {
@@ -88,19 +74,13 @@ public class Text implements Shape
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Sets the color for drawing this text.
-     *  newColor the new color
-     */
     public void setColor(Color newColor)
     {
         color = newColor;
         Canvas.getInstance().repaint();
     }
 
-    /**
-     * Shows this text on the canvas.
-     */
+    //draws text to screen
     public void draw()
     {
         Canvas.getInstance().show(this);
